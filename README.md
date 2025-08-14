@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestion Tâches (API)
 
 📄 [Lire la documentation complète](./DOCUMENTATION.md)
@@ -32,3 +33,7 @@ L'API écoute sur `http://localhost:5000` (si PORT=5000).
 4. Déployer et tester l'URL fournie par Render.
 
 > Note : pour les images/fichiers en prod, évite stockage local ; utiliser S3/Cloudinary.
+=======
+# projetFinalNodejs
+Application Node.js avec MongoDB Atlas pour la gestion des tâches d'une équipe
+>>>>>>> 787bbeb24fc74a312f20fc1ceb3a97ac15d9015c
