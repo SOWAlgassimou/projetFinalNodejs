@@ -1,7 +1,11 @@
-<<<<<<< HEAD
 # Gestion Tâches (API)
 
+Application Node.js avec MongoDB Atlas pour la gestion des tâches d'une équipe.
+
 📄 [Lire la documentation complète](./DOCUMENTATION.md)
+
+## 🌐 Démo en ligne
+[Accéder à l'application sur Render](https://gestion-tache-api.onrender.com)
 
 ## Installation locale
 
@@ -13,6 +17,7 @@
 
 L'API écoute sur `http://localhost:5000` (si PORT=5000).
 
+
 ## Endpoints principaux
 
 - `POST /api/auth/signup` - body: { nom, email, motdepasse }
@@ -23,6 +28,81 @@ L'API écoute sur `http://localhost:5000` (si PORT=5000).
 - `DELETE /api/tasks/:id` - supprimer
 - `GET /api/users` - lister les utilisateurs (requiert token)
 
+
+## 📦 Exemples de requêtes avec Postman
+
+### Inscription
+**Méthode :** POST  
+**URL :** http://localhost:5000/api/auth/signup  
+**Headers :**  
+  - Content-Type: application/json  
+**Body (raw, JSON) :**
+```json
+{
+  "nom": "Jean",
+  "email": "jean@example.com",
+  "motdepasse": "monmotdepasse"
+}
+```
+
+### Connexion
+**Méthode :** POST  
+**URL :** http://localhost:5000/api/auth/login  
+**Headers :**  
+  - Content-Type: application/json  
+**Body (raw, JSON) :**
+```json
+{
+  "email": "jean@example.com",
+  "motdepasse": "monmotdepasse"
+}
+```
+
+### Lister les tâches (avec token)
+**Méthode :** GET  
+**URL :** http://localhost:5000/api/tasks  
+**Headers :**  
+  - Authorization: Bearer VOTRE_TOKEN
+
+### Créer une tâche (avec token)
+**Méthode :** POST  
+**URL :** http://localhost:5000/api/tasks  
+**Headers :**  
+  - Authorization: Bearer VOTRE_TOKEN  
+  - Content-Type: application/json  
+**Body (raw, JSON) :**
+```json
+{
+  "titre": "Ma tâche",
+  "description": "Description de la tâche"
+}
+```
+
+### Modifier une tâche (avec token)
+**Méthode :** PUT  
+**URL :** http://localhost:5000/api/tasks/ID_TACHE  
+**Headers :**  
+  - Authorization: Bearer VOTRE_TOKEN  
+  - Content-Type: application/json  
+**Body (raw, JSON) :**
+```json
+{
+  "titre": "Nouveau titre"
+}
+```
+
+### Supprimer une tâche (avec token)
+**Méthode :** DELETE  
+**URL :** http://localhost:5000/api/tasks/ID_TACHE  
+**Headers :**  
+  - Authorization: Bearer VOTRE_TOKEN
+
+### Lister les utilisateurs (avec token)
+**Méthode :** GET  
+**URL :** http://localhost:5000/api/users  
+**Headers :**  
+  - Authorization: Bearer VOTRE_TOKEN
+
 ## Déploiement (bref)
 1. Créer cluster MongoDB Atlas et récupérer `MONGO_URI`.
 2. Push sur GitHub.
@@ -31,9 +111,3 @@ L'API écoute sur `http://localhost:5000` (si PORT=5000).
    - Start: `npm start`
    - Add Environment variables (MONGO_URI, JWT_SECRET, PORT, CORS_ORIGIN)
 4. Déployer et tester l'URL fournie par Render.
-
-> Note : pour les images/fichiers en prod, évite stockage local ; utiliser S3/Cloudinary.
-=======
-# projetFinalNodejs
-Application Node.js avec MongoDB Atlas pour la gestion des tâches d'une équipe
->>>>>>> 787bbeb24fc74a312f20fc1ceb3a97ac15d9015c
